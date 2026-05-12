@@ -21,7 +21,6 @@
 
     html{
       scroll-behavior:smooth;
-      scroll-padding-top:120px;
     }
 
     body{
@@ -53,10 +52,10 @@
       align-items:center;
       z-index:1000;
       border-radius:30px;
-      backdrop-filter:blur(22px);
-      background:rgba(0,0,0,0.25);
+      backdrop-filter:blur(18px);
+      background:rgba(255,255,255,0.08);
       border:1px solid rgba(255,255,255,0.12);
-      box-shadow:0 10px 40px rgba(0,0,0,0.18);
+      box-shadow:0 10px 40px rgba(0,0,0,0.12);
     }
 
     .logo{
@@ -69,33 +68,16 @@
     .nav-links{
       display:flex;
       gap:24px;
-      align-items:center;
     }
 
     .nav-links a{
-      color:rgba(255,255,255,0.85);
+      color:rgba(255,255,255,0.8);
       font-size:14px;
       transition:.3s;
     }
 
     .nav-links a:hover{
       color:white;
-    }
-
-    /* NEW HOME BUTTON */
-    .home-btn{
-      padding:10px 16px;
-      border-radius:999px;
-      background:rgba(255,255,255,0.12);
-      border:1px solid rgba(255,255,255,0.25);
-      color:white;
-      font-size:14px;
-      transition:.3s;
-    }
-
-    .home-btn:hover{
-      background:white;
-      color:black;
     }
 
     .hero{
@@ -112,15 +94,6 @@
       text-align:center;
       color:white;
       padding:40px;
-    }
-
-    /* IMPROVED READABILITY */
-    .hero h1{
-      text-shadow:0 10px 40px rgba(0,0,0,0.6);
-    }
-
-    .hero p{
-      text-shadow:0 8px 30px rgba(0,0,0,0.5);
     }
 
     .hero-content{
@@ -341,9 +314,17 @@
     }
 
     @keyframes pulse{
-      0%{transform:scale(1);}
-      50%{transform:scale(1.08);}
-      100%{transform:scale(1);}
+      0%{
+        transform:scale(1);
+      }
+
+      50%{
+        transform:scale(1.08);
+      }
+
+      100%{
+        transform:scale(1);
+      }
     }
 
     .footer{
@@ -421,7 +402,6 @@
     <div class="logo">LUNO CAFÉ</div>
 
     <div class="nav-links">
-      <a class="home-btn" href="index.html">Home</a>
       <a href="index.html">Home</a>
       <a href="menu.html">Menu</a>
       <a href="gallery.html">Gallery</a>
@@ -449,9 +429,268 @@
 
   </section>
 
-  <!-- EVERYTHING ELSE REMAINS UNCHANGED -->
+  <section class="menu-section">
 
-  <!-- (rest of your code stays exactly the same) -->
+    <div class="section-header">
+      <span>Featured Breakfast</span>
+      <h2>Morning fuel done beautifully.</h2>
+    </div>
+
+    <div class="menu-grid">
+
+      <!-- CARD -->
+
+      <div class="menu-card">
+
+        <div class="popular-tag">🔥 Most Ordered</div>
+
+        <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="menu-content">
+
+          <h3>Luno Sunrise Breakfast</h3>
+
+          <p>
+            Eggs, crispy toast, grilled sausage and hash browns designed for productive mornings.
+          </p>
+
+          <div class="price">R59</div>
+
+          <button class="whatsapp-btn"
+          onclick="orderItem('Luno Sunrise Breakfast','59')">
+            Order on WhatsApp
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+
+      <div class="menu-card">
+
+        <div class="popular-tag">⭐ Student Favorite</div>
+
+        <!-- UPGRADED WRAP IMAGE -->
+        <img src="https://images.unsplash.com/photo-1539252554453-80ab65ce3586?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="menu-content">
+
+          <h3>Breakfast Wrap</h3>
+
+          <p>
+            Scrambled eggs, grilled chicken strips, melted cheese and creamy spicy mayo.
+          </p>
+
+          <div class="price">R45</div>
+
+          <button class="whatsapp-btn"
+          onclick="orderItem('Breakfast Wrap','45')">
+            Order on WhatsApp
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+
+      <div class="menu-card">
+
+        <div class="popular-tag">⚡ Trending</div>
+
+        <img src="https://images.unsplash.com/photo-1511690078903-71dc5a49f5e3?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="menu-content">
+
+          <h3>Campus Power Bowl</h3>
+
+          <p>
+            Granola, yogurt, berries and bananas layered beautifully for healthy energy.
+          </p>
+
+          <div class="price">R49</div>
+
+          <button class="whatsapp-btn"
+          onclick="orderItem('Campus Power Bowl','49')">
+            Order on WhatsApp
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- CATEGORIES -->
+
+    <div class="categories">
+
+      <!-- COFFEE -->
+
+      <div class="category-card">
+
+        <h3>☕ Coffee & Hot Drinks</h3>
+
+        <div class="menu-item">
+
+          <div class="item-info">
+            <h4>Cappuccino</h4>
+            <p>Rich creamy espresso</p>
+          </div>
+
+          <div class="item-price">R29</div>
+
+          <button class="small-whatsapp"
+          onclick="orderItem('Cappuccino','29')">
+            Order
+          </button>
+
+        </div>
+
+        <div class="menu-item">
+
+          <div class="item-info">
+            <h4>Americano</h4>
+            <p>Strong smooth coffee</p>
+          </div>
+
+          <div class="item-price">R24</div>
+
+          <button class="small-whatsapp"
+          onclick="orderItem('Americano','24')">
+            Order
+          </button>
+
+        </div>
+
+        <div class="menu-item">
+
+          <div class="item-info">
+            <h4>Matcha Latte</h4>
+            <p>Premium neon green matcha</p>
+          </div>
+
+          <div class="item-price">R32</div>
+
+          <button class="small-whatsapp"
+          onclick="orderItem('Matcha Latte','32')">
+            Order
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- COLD DRINKS -->
+
+      <div class="category-card">
+
+        <h3>🥤 Cold Drinks</h3>
+
+        <div class="menu-item">
+
+          <div class="item-info">
+            <h4>Iced Coffee</h4>
+            <p>Luxury aesthetic iced coffee</p>
+          </div>
+
+          <div class="item-price">R34</div>
+
+          <button class="small-whatsapp"
+          onclick="orderItem('Iced Coffee','34')">
+            Order
+          </button>
+
+        </div>
+
+        <div class="menu-item">
+
+          <div class="item-info">
+            <h4>Caramel Frappe</h4>
+            <p>Sweet creamy caramel drink</p>
+          </div>
+
+          <div class="item-price">R39</div>
+
+          <button class="small-whatsapp"
+          onclick="orderItem('Caramel Frappe','39')">
+            Order
+          </button>
+
+        </div>
+
+        <div class="menu-item">
+
+          <div class="item-info">
+            <h4>Strawberry Smoothie</h4>
+            <p>Fresh fruity smoothie blend</p>
+          </div>
+
+          <div class="item-price">R36</div>
+
+          <button class="small-whatsapp"
+          onclick="orderItem('Strawberry Smoothie','36')">
+            Order
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer class="footer">
+
+    <h2>LUNO CAFÉ</h2>
+
+    <p>
+      Good Food. Good Coffee. Good Vibes.
+      Crafted in Randfontein for creators, students and dreamers.
+    </p>
+
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About</a>
+    </div>
+
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+
+  <a class="floating-whatsapp"
+  href="https://wa.me/27673523983"
+  target="_blank">
+    💬
+  </a>
+
+  <script>
+
+    function orderItem(item, price){
+
+      let message =
+`Hello Luno Café 👋
+
+I'd like to order:
+
+• ${item} — R${price}
+
+Please confirm availability.`;
+
+      let phone = "27673523983";
+
+      let whatsappURL =
+`https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+      window.open(whatsappURL, '_blank');
+
+    }
+
+  </script>
 
 </body>
 </html>
