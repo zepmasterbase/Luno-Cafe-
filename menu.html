@@ -1,0 +1,162 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luno Café | Study • Sip • Succeed</title>  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">  <style>
+    body{margin:0;font-family:Inter,sans-serif;background:#070B0A;color:#F6F1E6;scroll-behavior:smooth}
+
+    .nav{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 40px;background:rgba(0,0,0,0.5);backdrop-filter:blur(18px);z-index:10}
+    .logo{color:#C8A24A;font-weight:800;letter-spacing:3px}
+    .nav a{color:#fff;text-decoration:none;margin:0 12px;opacity:.8}
+    .nav a:hover{color:#C8A24A}
+
+    .hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:url('https://images.unsplash.com/photo-1509042239860-f550ce710b93') center/cover}
+    .overlay{position:absolute;inset:0;background:rgba(0,0,0,0.6)}
+    .hero h1{font-size:60px;margin:0}
+
+    .btn{padding:12px 24px;border-radius:30px;text-decoration:none;margin:10px;display:inline-block}
+    .gold{background:#C8A24A;color:#000}
+    .outline{border:1px solid #C8A24A;color:#C8A24A}
+  </style></head>
+<body><div class="nav">
+  <div class="logo">LUNO CAFÉ</div>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+  </div>
+</div><section class="hero">
+  <div class="overlay"></div>
+  <div>
+    <h1>Study • Sip • Succeed</h1>
+    <p>Luxury café built for students & creators</p>
+    <a class="btn gold" href="menu.html">Explore Menu</a>
+    <a class="btn outline" href="https://wa.me/27673523983">Order WhatsApp</a>
+  </div>
+</section></body>
+</html>/* ============================== FILE 2: menu.html (LUXURY MENU) ============================== */
+
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luno Café Menu</title>  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">  <style>
+    body{
+      margin:0;
+      font-family:Inter,sans-serif;
+      background:#070B0A;
+      color:#F6F1E6;
+    }
+
+    .nav{
+      position:fixed;
+      top:0;
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      padding:18px 40px;
+      background:rgba(0,0,0,0.6);
+      backdrop-filter:blur(18px);
+    }
+
+    .logo{
+      color:#C8A24A;
+      font-weight:800;
+      letter-spacing:3px;
+    }
+
+    .nav a{
+      color:#fff;
+      margin:0 12px;
+      text-decoration:none;
+      opacity:0.8;
+    }
+
+    .nav a:hover{color:#C8A24A}
+
+    .hero{
+      padding:140px 40px 60px;
+      text-align:center;
+    }
+
+    h1{
+      font-size:52px;
+      color:#C8A24A;
+    }
+
+    .menu-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:20px;
+      padding:40px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:20px;
+      padding:25px;
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+    }
+
+    .price{
+      color:#C8A24A;
+      margin-top:10px;
+    }
+
+    .wa{
+      position:fixed;
+      bottom:25px;
+      right:25px;
+      background:#25D366;
+      width:60px;
+      height:60px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:28px;
+      text-decoration:none;
+      color:#fff;
+    }
+
+    footer{
+      text-align:center;
+      padding:40px;
+      opacity:0.6;
+    }
+  </style></head>
+<body><div class="nav">
+  <div class="logo">LUNO CAFÉ</div>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+  </div>
+</div><section class="hero">
+  <h1>Signature Menu</h1>
+  <p>Crafted for students, creators & thinkers</p>
+</section><section class="menu-grid">  <div class="card">
+    <h3>Velvet Espresso</h3>
+    <p>Rich bold espresso shot with smooth finish.</p>
+    <div class="price">R28</div>
+  </div>  <div class="card">
+    <h3>Gold Caramel Latte</h3>
+    <p>Sweet caramel layered luxury latte.</p>
+    <div class="price">R35</div>
+  </div>  <div class="card">
+    <h3>Student Breakfast Combo</h3>
+    <p>Eggs, toast & coffee energy set.</p>
+    <div class="price">R45</div>
+  </div>  <div class="card">
+    <h3>Matcha Cloud</h3>
+    <p>Soft creamy aesthetic matcha blend.</p>
+    <div class="price">R38</div>
+  </div></section><a class="wa" href="https://wa.me/27673523983">💬</a>
+
+<footer>
+  © 2026 Luno Café • Study • Sip • Succeed
+</footer></body>
+</html>
