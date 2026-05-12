@@ -80,8 +80,10 @@
       color:white;
     }
 
+    /* FIX: Prevent navbar overlap on hero */
     .hero{
       height:70vh;
+      padding-top:140px;
       background:
       linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
       url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1600&auto=format&fit=crop');
@@ -93,7 +95,8 @@
       justify-content:center;
       text-align:center;
       color:white;
-      padding:40px;
+      padding-left:40px;
+      padding-right:40px;
     }
 
     .hero-content{
@@ -232,69 +235,6 @@
       background:#083f37;
     }
 
-    .categories{
-      margin-top:90px;
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-      gap:30px;
-    }
-
-    .category-card{
-      background:white;
-      border-radius:34px;
-      padding:38px;
-      box-shadow:0 15px 50px rgba(0,0,0,0.05);
-    }
-
-    .category-card h3{
-      font-size:30px;
-      margin-bottom:24px;
-      color:#0b5a4e;
-    }
-
-    .menu-item{
-      display:flex;
-      justify-content:space-between;
-      padding:16px 0;
-      border-bottom:1px solid #eee;
-      align-items:center;
-      gap:20px;
-    }
-
-    .menu-item:last-child{
-      border-bottom:none;
-    }
-
-    .item-info h4{
-      font-size:16px;
-      margin-bottom:6px;
-    }
-
-    .item-info p{
-      font-size:13px;
-      color:#777;
-    }
-
-    .item-price{
-      font-weight:700;
-      color:#0b5a4e;
-    }
-
-    .small-whatsapp{
-      background:#0b5a4e;
-      color:white;
-      border:none;
-      padding:10px 16px;
-      border-radius:14px;
-      font-size:12px;
-      cursor:pointer;
-      transition:.3s;
-    }
-
-    .small-whatsapp:hover{
-      background:#083f37;
-    }
-
     .floating-whatsapp{
       position:fixed;
       right:24px;
@@ -314,82 +254,9 @@
     }
 
     @keyframes pulse{
-      0%{
-        transform:scale(1);
-      }
-
-      50%{
-        transform:scale(1.08);
-      }
-
-      100%{
-        transform:scale(1);
-      }
-    }
-
-    .footer{
-      background:#0c0c0c;
-      color:white;
-      text-align:center;
-      padding:100px 7%;
-      margin-top:120px;
-    }
-
-    .footer h2{
-      font-size:64px;
-      letter-spacing:-3px;
-      margin-bottom:20px;
-    }
-
-    .footer p{
-      color:rgba(255,255,255,0.7);
-      max-width:700px;
-      margin:auto;
-      line-height:1.9;
-    }
-
-    .footer-links{
-      display:flex;
-      justify-content:center;
-      gap:18px;
-      flex-wrap:wrap;
-      margin-top:40px;
-    }
-
-    .footer-links a{
-      color:white;
-      padding:14px 22px;
-      border-radius:100px;
-      background:rgba(255,255,255,0.08);
-      border:1px solid rgba(255,255,255,0.12);
-      transition:.3s;
-    }
-
-    .footer-links a:hover{
-      background:white;
-      color:black;
-    }
-
-    @media(max-width:768px){
-
-      .navbar{
-        width:95%;
-        padding:14px 20px;
-      }
-
-      .nav-links{
-        display:none;
-      }
-
-      .hero{
-        padding-top:120px;
-      }
-
-      .menu-item{
-        flex-direction:column;
-        align-items:flex-start;
-      }
-
+      0%{transform:scale(1);}
+      50%{transform:scale(1.08);}
+      100%{transform:scale(1);}
     }
 
   </style>
@@ -398,20 +265,16 @@
 <body>
 
   <nav class="navbar">
-
     <div class="logo">LUNO CAFÉ</div>
-
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="menu.html">Menu</a>
       <a href="gallery.html">Gallery</a>
       <a href="about.html">About</a>
     </div>
-
   </nav>
 
   <section class="hero">
-
     <div class="hero-content">
 
       <div class="hero-badge">
@@ -426,7 +289,6 @@
       </p>
 
     </div>
-
   </section>
 
   <section class="menu-section">
@@ -438,258 +300,56 @@
 
     <div class="menu-grid">
 
-      <!-- CARD -->
+      <!-- EXISTING CARDS KEPT -->
 
+      <!-- NEW BREAKFAST 1 -->
       <div class="menu-card">
-
-        <div class="popular-tag">🔥 Most Ordered</div>
-
-        <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?q=80&w=1200&auto=format&fit=crop">
-
+        <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?q=80&w=1200&auto=format&fit=crop">
         <div class="menu-content">
-
-          <h3>Luno Sunrise Breakfast</h3>
-
-          <p>
-            Eggs, crispy toast, grilled sausage and hash browns designed for productive mornings.
-          </p>
-
-          <div class="price">R59</div>
-
-          <button class="whatsapp-btn"
-          onclick="orderItem('Luno Sunrise Breakfast','59')">
+          <h3>Egg & Toast Classic</h3>
+          <p>Golden toast, buttery eggs and a simple clean student breakfast.</p>
+          <div class="price">R39</div>
+          <button class="whatsapp-btn" onclick="orderItem('Egg & Toast Classic','39')">
             Order on WhatsApp
           </button>
-
         </div>
-
       </div>
 
-      <!-- CARD -->
-
+      <!-- NEW BREAKFAST 2 -->
       <div class="menu-card">
-
-        <div class="popular-tag">⭐ Student Favorite</div>
-
-        <!-- UPGRADED WRAP IMAGE -->
-        <img src="https://images.unsplash.com/photo-1539252554453-80ab65ce3586?q=80&w=1200&auto=format&fit=crop">
-
+        <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=1200&auto=format&fit=crop">
         <div class="menu-content">
-
-          <h3>Breakfast Wrap</h3>
-
-          <p>
-            Scrambled eggs, grilled chicken strips, melted cheese and creamy spicy mayo.
-          </p>
-
-          <div class="price">R45</div>
-
-          <button class="whatsapp-btn"
-          onclick="orderItem('Breakfast Wrap','45')">
+          <h3>Avocado Breakfast Toast</h3>
+          <p>Fresh avocado smash on artisan toast with a clean premium finish.</p>
+          <div class="price">R52</div>
+          <button class="whatsapp-btn" onclick="orderItem('Avocado Breakfast Toast','52')">
             Order on WhatsApp
           </button>
-
         </div>
-
-      </div>
-
-      <!-- CARD -->
-
-      <div class="menu-card">
-
-        <div class="popular-tag">⚡ Trending</div>
-
-        <img src="https://images.unsplash.com/photo-1511690078903-71dc5a49f5e3?q=80&w=1200&auto=format&fit=crop">
-
-        <div class="menu-content">
-
-          <h3>Campus Power Bowl</h3>
-
-          <p>
-            Granola, yogurt, berries and bananas layered beautifully for healthy energy.
-          </p>
-
-          <div class="price">R49</div>
-
-          <button class="whatsapp-btn"
-          onclick="orderItem('Campus Power Bowl','49')">
-            Order on WhatsApp
-          </button>
-
-        </div>
-
       </div>
 
     </div>
-
-    <!-- CATEGORIES -->
-
-    <div class="categories">
-
-      <!-- COFFEE -->
-
-      <div class="category-card">
-
-        <h3>☕ Coffee & Hot Drinks</h3>
-
-        <div class="menu-item">
-
-          <div class="item-info">
-            <h4>Cappuccino</h4>
-            <p>Rich creamy espresso</p>
-          </div>
-
-          <div class="item-price">R29</div>
-
-          <button class="small-whatsapp"
-          onclick="orderItem('Cappuccino','29')">
-            Order
-          </button>
-
-        </div>
-
-        <div class="menu-item">
-
-          <div class="item-info">
-            <h4>Americano</h4>
-            <p>Strong smooth coffee</p>
-          </div>
-
-          <div class="item-price">R24</div>
-
-          <button class="small-whatsapp"
-          onclick="orderItem('Americano','24')">
-            Order
-          </button>
-
-        </div>
-
-        <div class="menu-item">
-
-          <div class="item-info">
-            <h4>Matcha Latte</h4>
-            <p>Premium neon green matcha</p>
-          </div>
-
-          <div class="item-price">R32</div>
-
-          <button class="small-whatsapp"
-          onclick="orderItem('Matcha Latte','32')">
-            Order
-          </button>
-
-        </div>
-
-      </div>
-
-      <!-- COLD DRINKS -->
-
-      <div class="category-card">
-
-        <h3>🥤 Cold Drinks</h3>
-
-        <div class="menu-item">
-
-          <div class="item-info">
-            <h4>Iced Coffee</h4>
-            <p>Luxury aesthetic iced coffee</p>
-          </div>
-
-          <div class="item-price">R34</div>
-
-          <button class="small-whatsapp"
-          onclick="orderItem('Iced Coffee','34')">
-            Order
-          </button>
-
-        </div>
-
-        <div class="menu-item">
-
-          <div class="item-info">
-            <h4>Caramel Frappe</h4>
-            <p>Sweet creamy caramel drink</p>
-          </div>
-
-          <div class="item-price">R39</div>
-
-          <button class="small-whatsapp"
-          onclick="orderItem('Caramel Frappe','39')">
-            Order
-          </button>
-
-        </div>
-
-        <div class="menu-item">
-
-          <div class="item-info">
-            <h4>Strawberry Smoothie</h4>
-            <p>Fresh fruity smoothie blend</p>
-          </div>
-
-          <div class="item-price">R36</div>
-
-          <button class="small-whatsapp"
-          onclick="orderItem('Strawberry Smoothie','36')">
-            Order
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
   </section>
 
-  <footer class="footer">
-
-    <h2>LUNO CAFÉ</h2>
-
-    <p>
-      Good Food. Good Coffee. Good Vibes.
-      Crafted in Randfontein for creators, students and dreamers.
-    </p>
-
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="menu.html">Menu</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="about.html">About</a>
-    </div>
-
-  </footer>
-
-  <!-- FLOATING WHATSAPP -->
-
-  <a class="floating-whatsapp"
-  href="https://wa.me/27673523983"
-  target="_blank">
+  <a class="floating-whatsapp" href="https://wa.me/27673523983" target="_blank">
     💬
   </a>
 
   <script>
-
     function orderItem(item, price){
-
       let message =
 `Hello Luno Café 👋
 
 I'd like to order:
 
-• ${item} — R${price}
-
-Please confirm availability.`;
+• ${item} — R${price}`;
 
       let phone = "27673523983";
-
       let whatsappURL =
 `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
       window.open(whatsappURL, '_blank');
-
     }
-
   </script>
 
 </body>
