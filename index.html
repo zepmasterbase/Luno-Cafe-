@@ -1,27 +1,187 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Luno Café | Study • Sip • Succeed</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luno Café | Study • Sip • Succeed</title>  <!-- Fonts -->  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">  <!-- GSAP -->  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Inter,sans-serif;
+      scroll-behavior:smooth;
+    }
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    body{
+      background:#0B0F0E;
+      color:#F5F1E8;
+      overflow-x:hidden;
+    }
 
-  <!-- Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+    /* NAVBAR */
+    .navbar{
+      position:fixed;
+      top:0;
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 40px;
+      backdrop-filter:blur(20px);
+      background:rgba(0,0,0,0.45);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+      z-index:999;
+    }
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css">
+    .logo{
+      font-weight:800;
+      letter-spacing:3px;
+      color:#C8A24A;
+    }
 
-</head>
+    .nav-links a{
+      margin:0 14px;
+      text-decoration:none;
+      color:#fff;
+      font-size:14px;
+      opacity:0.75;
+      transition:0.3s;
+    }
 
-<body>
+    .nav-links a:hover{
+      opacity:1;
+      color:#C8A24A;
+    }
 
-<!-- NAVBAR -->
-<header class="navbar">
+    /* HERO */
+    .hero{
+      height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      position:relative;
+      background:url('https://images.unsplash.com/photo-1509042239860-f550ce710b93') center/cover no-repeat;
+    }
+
+    .overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(11,15,14,0.95));
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      max-width:850px;
+      padding:20px;
+    }
+
+    .hero h1{
+      font-size:64px;
+      font-weight:800;
+      letter-spacing:-1px;
+    }
+
+    .hero p{
+      margin-top:20px;
+      font-size:18px;
+      opacity:0.85;
+    }
+
+    .btn{
+      margin-top:28px;
+      padding:12px 26px;
+      border-radius:30px;
+      display:inline-block;
+      text-decoration:none;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .btn-primary{
+      background:#C8A24A;
+      color:#000;
+      margin-right:10px;
+    }
+
+    .btn-secondary{
+      border:1px solid #C8A24A;
+      color:#C8A24A;
+    }
+
+    /* SECTIONS */
+    section{
+      padding:120px 60px;
+    }
+
+    h2{
+      font-size:42px;
+      text-align:center;
+      margin-bottom:60px;
+      color:#C8A24A;
+    }
+
+    /* GRID */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:20px;
+    }
+
+    .card{
+      padding:28px;
+      border-radius:20px;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      backdrop-filter:blur(20px);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+    }
+
+    /* GALLERY */
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:15px;
+    }
+
+    .img{
+      height:260px;
+      border-radius:16px;
+      background:#222;
+    }
+
+    /* WHATSAPP */
+    .whatsapp{
+      position:fixed;
+      bottom:25px;
+      right:25px;
+      width:60px;
+      height:60px;
+      border-radius:50%;
+      background:#25D366;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:28px;
+      color:#fff;
+      text-decoration:none;
+      box-shadow:0 10px 30px rgba(0,0,0,0.35);
+      z-index:1000;
+    }
+
+    footer{
+      text-align:center;
+      padding:40px;
+      opacity:0.6;
+      border-top:1px solid rgba(255,255,255,0.08);
+    }
+  </style></head>
+<body><header class="navbar">
   <div class="logo">LUNO CAFÉ</div>
-
   <nav class="nav-links">
     <a href="#home">Home</a>
     <a href="#menu">Menu</a>
@@ -29,114 +189,62 @@
     <a href="#gallery">Gallery</a>
     <a href="#contact">Contact</a>
   </nav>
-
-  <div class="mobile-menu">☰</div>
-</header>
-
-
-<!-- HERO -->
-<section id="home" class="hero">
+</header><section class="hero" id="home">
   <div class="overlay"></div>
-
   <div class="hero-content">
-    <h1>Study • Sip • Succeed</h1>
-    <p>A premium café space for students, creators & remote thinkers.</p>
-
-    <div class="hero-buttons">
-      <a href="#menu" class="btn-primary">Explore Menu</a>
-      <a href="https://wa.me/27600000000" class="btn-secondary">
-        Order on WhatsApp
-      </a>
-    </div>
-  </div>
-</section>
-
-
-<!-- LIFESTYLE SECTION -->
-<section class="lifestyle">
-  <h2>Built for Modern Student Life</h2>
-
-  <div class="glass-grid">
-    <div class="glass-card">📚 Study Friendly</div>
-    <div class="glass-card">☕ Premium Coffee</div>
-    <div class="glass-card">💻 Remote Work Space</div>
-  </div>
-</section>
-
-
-<!-- MENU -->
-<section id="menu" class="menu">
-  <h2>Signature Menu</h2>
-
-  <div class="menu-grid">
-
-    <div class="menu-card">
-      <h3>Velvet Espresso</h3>
-      <p>Rich, bold, smooth finish</p>
-    </div>
-
-    <div class="menu-card">
-      <h3>Gold Caramel Latte</h3>
-      <p>Sweet luxury in every sip</p>
-    </div>
-
-    <div class="menu-card">
-      <h3>Student Breakfast Combo</h3>
-      <p>Affordable + energizing set</p>
-    </div>
-
-    <div class="menu-card">
-      <h3>Matcha Cloud</h3>
-      <p>Soft, creamy, aesthetic drink</p>
-    </div>
+    <h1 class="reveal">Study • Sip • Succeed</h1>
+    <p class="reveal">A luxury café built for students, creators & remote thinkers.</p><a class="btn btn-primary reveal" href="#menu">Explore Menu</a>
+<a class="btn btn-secondary reveal" href="https://wa.me/27673523983">Order WhatsApp</a>
 
   </div>
-</section>
-
-
-<!-- GALLERY -->
-<section id="gallery" class="gallery">
-  <h2>Instagrammable Moments</h2>
-
+</section><section id="menu">
+  <h2 class="reveal">Signature Menu</h2>
+  <div class="grid">
+    <div class="card reveal">Velvet Espresso</div>
+    <div class="card reveal">Gold Caramel Latte</div>
+    <div class="card reveal">Student Breakfast Combo</div>
+    <div class="card reveal">Matcha Cloud</div>
+  </div>
+</section><section id="about">
+  <h2 class="reveal">About Luno Café</h2>
+  <div class="grid">
+    <div class="card reveal">Premium student-focused café experience.</div>
+    <div class="card reveal">Built for productivity & creativity.</div>
+    <div class="card reveal">Luxury meets everyday lifestyle.</div>
+  </div>
+</section><section id="gallery">
+  <h2 class="reveal">Instagrammable Moments</h2>
   <div class="gallery-grid">
-    <div class="img"></div>
-    <div class="img"></div>
-    <div class="img"></div>
-    <div class="img"></div>
+    <div class="img reveal"></div>
+    <div class="img reveal"></div>
+    <div class="img reveal"></div>
+    <div class="img reveal"></div>
   </div>
-</section>
+</section><section id="contact">
+  <h2 class="reveal">Contact & Orders</h2>
+  <div style="text-align:center">
+    <a class="btn btn-primary" href="https://wa.me/27673523983">Order on WhatsApp</a>
+  </div>
+</section><footer>
+  © 2026 Luno Café • Study • Sip • Succeed
+</footer><a class="whatsapp" href="https://wa.me/27673523983">💬</a>
 
+<script>
+  gsap.registerPlugin(ScrollTrigger);
 
-<!-- ABOUT -->
-<section id="about" class="about">
-  <h2>About Luno Café</h2>
-  <p>
-    A modern luxury café designed for Africa’s next generation of thinkers,
-    students, and creators. Built for focus, comfort, and culture.
-  </p>
-</section>
+  gsap.utils.toArray(".reveal").forEach(el => {
+    gsap.from(el, {
+      opacity:0,
+      y:60,
+      duration:1,
+      scrollTrigger:{
+        trigger:el,
+        start:"top 85%"
+      }
+    });
+  });
 
-
-<!-- CONTACT -->
-<section id="contact" class="contact">
-  <h2>Contact & Orders</h2>
-
-  <a class="whatsapp-btn" href="https://wa.me/27600000000">
-    Order via WhatsApp
-  </a>
-</section>
-
-
-<!-- FLOATING WHATSAPP BUTTON -->
-<a href="https://wa.me/27600000000" class="floating-wa">
-  💬
-</a>
-
-
-<!-- FOOTER -->
-<footer>
-  <p>© 2026 Luno Café. Study • Sip • Succeed.</p>
-</footer>
-
-</body>
+  gsap.from(".hero h1",{opacity:0,y:40,duration:1});
+  gsap.from(".hero p",{opacity:0,y:40,duration:1,delay:0.3});
+</script></body>
 </html>
