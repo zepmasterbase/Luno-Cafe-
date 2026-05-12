@@ -2,161 +2,533 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luno Café | Study • Sip • Succeed</title>  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">  <style>
-    body{margin:0;font-family:Inter,sans-serif;background:#070B0A;color:#F6F1E6;scroll-behavior:smooth}
+  <title>Luno Café — Apple Style Menu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
 
-    .nav{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 40px;background:rgba(0,0,0,0.5);backdrop-filter:blur(18px);z-index:10}
-    .logo{color:#C8A24A;font-weight:800;letter-spacing:3px}
-    .nav a{color:#fff;text-decoration:none;margin:0 12px;opacity:.8}
-    .nav a:hover{color:#C8A24A}
+    body {
+      background: #f5f5f7;
+      color: #111;
+      overflow-x: hidden;
+    }
 
-    .hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:url('https://images.unsplash.com/photo-1509042239860-f550ce710b93') center/cover}
-    .overlay{position:absolute;inset:0;background:rgba(0,0,0,0.6)}
-    .hero h1{font-size:60px;margin:0}
+    .hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.7)),
+        url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1600&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px;
+      position: relative;
+    }
 
-    .btn{padding:12px 24px;border-radius:30px;text-decoration:none;margin:10px;display:inline-block}
-    .gold{background:#C8A24A;color:#000}
-    .outline{border:1px solid #C8A24A;color:#C8A24A}
-  </style></head>
-<body><div class="nav">
-  <div class="logo">LUNO CAFÉ</div>
-  <div>
-    <a href="index.html">Home</a>
-    <a href="menu.html">Menu</a>
+    .glass-nav {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 92%;
+      max-width: 1200px;
+      padding: 16px 28px;
+      border-radius: 30px;
+      backdrop-filter: blur(16px);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .logo {
+      color: white;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: rgba(255,255,255,0.85);
+      font-size: 14px;
+      transition: 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      color: white;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 100px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(12px);
+      margin-bottom: 26px;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(56px, 10vw, 110px);
+      font-weight: 800;
+      letter-spacing: -4px;
+      line-height: 0.95;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.8);
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .hero-buttons {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 16px 28px;
+      border-radius: 100px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s ease;
+      font-size: 15px;
+    }
+
+    .btn-primary {
+      background: white;
+      color: black;
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.04);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white;
+      backdrop-filter: blur(12px);
+    }
+
+    .section {
+      padding: 120px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+
+    .section-title span {
+      color: #888;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(40px, 6vw, 72px);
+      margin-top: 10px;
+      letter-spacing: -2px;
+      font-weight: 700;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+
+    .menu-card {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(20px);
+      border-radius: 34px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.6);
+      box-shadow: 0 15px 50px rgba(0,0,0,0.08);
+      transition: all 0.35s ease;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.12);
+    }
+
+    .menu-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 26px;
+    }
+
+    .card-content h3 {
+      font-size: 26px;
+      margin-bottom: 12px;
+      letter-spacing: -1px;
+    }
+
+    .card-content p {
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 22px;
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .price {
+      font-size: 28px;
+      font-weight: 700;
+      color: #0d5b4f;
+    }
+
+    .tag {
+      background: #e9fff6;
+      color: #0d5b4f;
+      padding: 10px 14px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .feature-section {
+      background: linear-gradient(135deg, #07120f, #10211d);
+      color: white;
+      border-radius: 50px;
+      margin: 0 4%;
+      padding: 100px 7%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .feature-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 34px;
+      border-radius: 30px;
+      backdrop-filter: blur(14px);
+    }
+
+    .feature-card h4 {
+      font-size: 24px;
+      margin-bottom: 14px;
+    }
+
+    .feature-card p {
+      color: rgba(255,255,255,0.7);
+      line-height: 1.8;
+    }
+
+    .signature-banner {
+      margin-top: 100px;
+      border-radius: 40px;
+      overflow: hidden;
+      position: relative;
+      min-height: 500px;
+      background:
+        linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.2)),
+        url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1600&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      padding: 70px;
+      color: white;
+    }
+
+    .signature-content {
+      max-width: 520px;
+    }
+
+    .signature-content h2 {
+      font-size: clamp(42px, 6vw, 82px);
+      line-height: 0.95;
+      margin-bottom: 24px;
+      letter-spacing: -3px;
+    }
+
+    .signature-content p {
+      color: rgba(255,255,255,0.82);
+      line-height: 1.9;
+      margin-bottom: 32px;
+      font-size: 18px;
+    }
+
+    .footer {
+      padding: 90px 7%;
+      text-align: center;
+    }
+
+    .footer h2 {
+      font-size: 56px;
+      letter-spacing: -2px;
+      margin-bottom: 20px;
+    }
+
+    .footer p {
+      color: #666;
+      font-size: 18px;
+      max-width: 650px;
+      margin: auto;
+      line-height: 1.8;
+    }
+
+    .footer-bottom {
+      margin-top: 50px;
+      color: #999;
+      font-size: 14px;
+    }
+
+    @media(max-width: 768px) {
+      .hero {
+        padding-top: 120px;
+      }
+
+      .glass-nav {
+        width: 95%;
+        padding: 14px 18px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .signature-banner {
+        padding: 40px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style></head><body>  <nav class="glass-nav">
+    <div class="logo">LUNO CAFÉ</div><div class="nav-links">
+  <a href="#breakfast">Breakfast</a>
+  <a href="#coffee">Coffee</a>
+  <a href="#smoothies">Smoothies</a>
+  <a href="#vibes">Experience</a>
+</div>
+
+  </nav>  <section class="hero">
+    <div class="hero-content">
+      <div class="badge">Premium Café Experience • Crafted for Students</div><h1>Study.<br>Sip.<br>Succeed.</h1>
+
+  <p>
+    A futuristic Apple-inspired café experience blending premium coffee,
+    aesthetic breakfast culture, and sleek modern student energy.
+  </p>
+
+  <div class="hero-buttons">
+    <button class="btn btn-primary">View Menu</button>
+    <button class="btn btn-secondary">Order Online</button>
   </div>
-</div><section class="hero">
-  <div class="overlay"></div>
-  <div>
-    <h1>Study • Sip • Succeed</h1>
-    <p>Luxury café built for students & creators</p>
-    <a class="btn gold" href="menu.html">Explore Menu</a>
-    <a class="btn outline" href="https://wa.me/27673523983">Order WhatsApp</a>
+</div>
+
+  </section>  <section class="section" id="breakfast">
+    <div class="section-title">
+      <span>Breakfast Collection</span>
+      <h2>Beautiful mornings start here.</h2>
+    </div><div class="menu-grid">
+
+  <div class="menu-card">
+    <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?q=80&w=1200&auto=format&fit=crop">
+
+    <div class="card-content">
+      <h3>Luno Sunrise</h3>
+      <p>Eggs, crispy toast, grilled sausage and hash browns with café-style plating.</p>
+
+      <div class="price-row">
+        <div class="price">R59</div>
+        <div class="tag">Best Seller</div>
+      </div>
+    </div>
   </div>
-</section></body>
-</html>/* ============================== FILE 2: menu.html (LUXURY MENU) ============================== */
 
-<!DOCTYPE html><html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luno Café Menu</title>  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">  <style>
-    body{
-      margin:0;
-      font-family:Inter,sans-serif;
-      background:#070B0A;
-      color:#F6F1E6;
-    }
+  <div class="menu-card">
+    <img src="https://images.unsplash.com/photo-1553909489-cd47e0ef937f?q=80&w=1200&auto=format&fit=crop">
 
-    .nav{
-      position:fixed;
-      top:0;
-      width:100%;
-      display:flex;
-      justify-content:space-between;
-      padding:18px 40px;
-      background:rgba(0,0,0,0.6);
-      backdrop-filter:blur(18px);
-    }
+    <div class="card-content">
+      <h3>Breakfast Wrap</h3>
+      <p>Scrambled eggs, grilled chicken strips, melted cheese and spicy mayo.</p>
 
-    .logo{
-      color:#C8A24A;
-      font-weight:800;
-      letter-spacing:3px;
-    }
-
-    .nav a{
-      color:#fff;
-      margin:0 12px;
-      text-decoration:none;
-      opacity:0.8;
-    }
-
-    .nav a:hover{color:#C8A24A}
-
-    .hero{
-      padding:140px 40px 60px;
-      text-align:center;
-    }
-
-    h1{
-      font-size:52px;
-      color:#C8A24A;
-    }
-
-    .menu-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:20px;
-      padding:40px;
-    }
-
-    .card{
-      background:rgba(255,255,255,0.05);
-      border:1px solid rgba(255,255,255,0.08);
-      border-radius:20px;
-      padding:25px;
-      transition:0.3s;
-    }
-
-    .card:hover{
-      transform:translateY(-8px);
-    }
-
-    .price{
-      color:#C8A24A;
-      margin-top:10px;
-    }
-
-    .wa{
-      position:fixed;
-      bottom:25px;
-      right:25px;
-      background:#25D366;
-      width:60px;
-      height:60px;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:28px;
-      text-decoration:none;
-      color:#fff;
-    }
-
-    footer{
-      text-align:center;
-      padding:40px;
-      opacity:0.6;
-    }
-  </style></head>
-<body><div class="nav">
-  <div class="logo">LUNO CAFÉ</div>
-  <div>
-    <a href="index.html">Home</a>
-    <a href="menu.html">Menu</a>
+      <div class="price-row">
+        <div class="price">R45</div>
+        <div class="tag">Campus Favorite</div>
+      </div>
+    </div>
   </div>
-</div><section class="hero">
-  <h1>Signature Menu</h1>
-  <p>Crafted for students, creators & thinkers</p>
-</section><section class="menu-grid">  <div class="card">
-    <h3>Velvet Espresso</h3>
-    <p>Rich bold espresso shot with smooth finish.</p>
-    <div class="price">R28</div>
-  </div>  <div class="card">
-    <h3>Gold Caramel Latte</h3>
-    <p>Sweet caramel layered luxury latte.</p>
-    <div class="price">R35</div>
-  </div>  <div class="card">
-    <h3>Student Breakfast Combo</h3>
-    <p>Eggs, toast & coffee energy set.</p>
-    <div class="price">R45</div>
-  </div>  <div class="card">
-    <h3>Matcha Cloud</h3>
-    <p>Soft creamy aesthetic matcha blend.</p>
-    <div class="price">R38</div>
-  </div></section><a class="wa" href="https://wa.me/27673523983">💬</a>
 
-<footer>
-  © 2026 Luno Café • Study • Sip • Succeed
-</footer></body>
+  <div class="menu-card">
+    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=1200&auto=format&fit=crop">
+
+    <div class="card-content">
+      <h3>Campus Power Bowl</h3>
+      <p>Granola, yogurt, strawberries, blueberries, banana and organic honey.</p>
+
+      <div class="price-row">
+        <div class="price">R49</div>
+        <div class="tag">Healthy</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  </section>  <section class="feature-section" id="coffee"><div class="section-title">
+  <span style="color: rgba(255,255,255,0.6);">Coffee Culture</span>
+  <h2 style="color: white;">Minimal. Warm. Viral.</h2>
+</div>
+
+<div class="feature-grid">
+
+  <div class="feature-card">
+    <h4>Neon Matcha Latte</h4>
+    <p>
+      Signature glowing green latte inspired by futuristic Tokyo café culture.
+    </p>
+  </div>
+
+  <div class="feature-card">
+    <h4>Aesthetic Iced Coffees</h4>
+    <p>
+      Premium layered coffees designed for Instagram, TikTok and student content culture.
+    </p>
+  </div>
+
+  <div class="feature-card">
+    <h4>Fast WiFi + Charging</h4>
+    <p>
+      Designed for creators, students and remote workers who live online.
+    </p>
+  </div>
+
+</div>
+
+  </section>  <section class="section" id="smoothies">
+    <div class="section-title">
+      <span>Premium Smoothies</span>
+      <h2>Fuel for the next generation.</h2>
+    </div><div class="menu-grid">
+
+  <div class="menu-card">
+    <img src="https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?q=80&w=1200&auto=format&fit=crop">
+
+    <div class="card-content">
+      <h3>Luno Energy Shake</h3>
+      <p>Banana, peanut butter, honey and milk blended into a smooth energy boost.</p>
+
+      <div class="price-row">
+        <div class="price">R50</div>
+        <div class="tag">Signature</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-card">
+    <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?q=80&w=1200&auto=format&fit=crop">
+
+    <div class="card-content">
+      <h3>Tropical Luno</h3>
+      <p>Mango, pineapple and coconut blended into a refreshing tropical smoothie.</p>
+
+      <div class="price-row">
+        <div class="price">R50</div>
+        <div class="tag">Refreshing</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-card">
+    <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=1200&auto=format&fit=crop">
+
+    <div class="card-content">
+      <h3>Protein Smoothie</h3>
+      <p>Protein-rich smoothie designed for gym lovers, creators and busy students.</p>
+
+      <div class="price-row">
+        <div class="price">R55</div>
+        <div class="tag">Fitness</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="signature-banner" id="vibes">
+  <div class="signature-content">
+    <div class="badge">The Luno Experience</div>
+
+    <h2>Café culture redesigned for Gen Z.</h2>
+
+    <p>
+      Apple-inspired minimalism meets modern African student culture.
+      Sleek aesthetics. Soft lighting. Premium presentation. Viral café energy.
+    </p>
+
+    <button class="btn btn-primary">Visit Luno Café</button>
+  </div>
+</div>
+
+  </section>  <footer class="footer">
+    <h2>LUNO CAFÉ</h2><p>
+  Good Food. Good Coffee. Good Vibes.
+  Crafted for creators, students and the future of café culture.
+</p>
+
+<div class="footer-bottom">
+  © 2026 Luno Café • Designed with Apple-inspired elegance.
+</div>
+
+  </footer></body>
 </html>
