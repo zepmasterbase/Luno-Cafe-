@@ -2,177 +2,538 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luno Café | Study • Sip • Succeed</title>  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">  <style>
-    body{margin:0;font-family:Inter,sans-serif;background:#070B0A;color:#F6F1E6;scroll-behavior:smooth}
+  <title>Luno Café — Gallery</title>  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
 
-    .nav{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 40px;background:rgba(0,0,0,0.5);backdrop-filter:blur(18px);z-index:10}
-    .logo{color:#C8A24A;font-weight:800;letter-spacing:3px}
-    .nav a{color:#fff;text-decoration:none;margin:0 12px;opacity:.8}
-    .nav a:hover{color:#C8A24A}
+    html {
+      scroll-behavior: smooth;
+    }
 
-    .hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:url('https://images.unsplash.com/photo-1509042239860-f550ce710b93') center/cover}
-    .overlay{position:absolute;inset:0;background:rgba(0,0,0,0.6)}
-    .hero h1{font-size:60px;margin:0}
+    body {
+      background: #f5f5f7;
+      color: #111;
+      overflow-x: hidden;
+    }
 
-    .btn{padding:12px 24px;border-radius:30px;text-decoration:none;margin:10px;display:inline-block}
-    .gold{background:#C8A24A;color:#000}
-    .outline{border:1px solid #C8A24A;color:#C8A24A}
-  </style></head>
-<body><div class="nav">
-  <div class="logo">LUNO CAFÉ</div>
-  <div>
-    <a href="index.html">Home</a>
-    <a href="menu.html">Menu</a>
-    <a href="gallery.html">Gallery</a>
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 92%;
+      max-width: 1250px;
+      padding: 16px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 999;
+      border-radius: 30px;
+      backdrop-filter: blur(18px);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    }
+
+    .logo {
+      color: white;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .hero {
+      height: 100vh;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
+        url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1600&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      color: white;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 100px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      backdrop-filter: blur(12px);
+      margin-bottom: 28px;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(60px, 11vw, 130px);
+      line-height: 0.9;
+      letter-spacing: -5px;
+      margin-bottom: 28px;
+      font-weight: 800;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 20px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.82);
+    }
+
+    .hero-btns {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 16px 28px;
+      border-radius: 100px;
+      border: none;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .btn-primary {
+      background: white;
+      color: black;
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.05);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(10px);
+      color: white;
+    }
+
+    .section {
+      padding: 120px 7%;
+    }
+
+    .section-header {
+      margin-bottom: 60px;
+      text-align: center;
+    }
+
+    .section-header span {
+      color: #777;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 14px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(40px, 6vw, 72px);
+      letter-spacing: -3px;
+      margin-top: 10px;
+      font-weight: 700;
+    }
+
+    .masonry-grid {
+      columns: 3 320px;
+      column-gap: 22px;
+    }
+
+    .gallery-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 34px;
+      margin-bottom: 22px;
+      background: white;
+      box-shadow: 0 15px 60px rgba(0,0,0,0.08);
+      break-inside: avoid;
+      transition: 0.4s ease;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .gallery-card img {
+      transition: 0.5s ease;
+    }
+
+    .gallery-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      display: flex;
+      align-items: flex-end;
+      padding: 28px;
+    }
+
+    .overlay-content h3 {
+      color: white;
+      font-size: 28px;
+      margin-bottom: 8px;
+      letter-spacing: -1px;
+    }
+
+    .overlay-content p {
+      color: rgba(255,255,255,0.78);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    .quote-banner {
+      margin: 120px 5%;
+      min-height: 550px;
+      border-radius: 50px;
+      overflow: hidden;
+      background:
+        linear-gradient(to right, rgba(0,0,0,0.72), rgba(0,0,0,0.2)),
+        url('https://images.unsplash.com/photo-1521017432531-fbd92d768814?q=80&w=1600&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      padding: 80px;
+    }
+
+    .quote-content {
+      max-width: 700px;
+      color: white;
+    }
+
+    .quote-content h2 {
+      font-size: clamp(46px, 7vw, 90px);
+      line-height: 0.95;
+      letter-spacing: -4px;
+      margin-bottom: 26px;
+    }
+
+    .quote-content p {
+      font-size: 20px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .lifestyle-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
+      margin-top: 50px;
+    }
+
+    .lifestyle-card {
+      background: rgba(255,255,255,0.75);
+      border: 1px solid rgba(255,255,255,0.7);
+      backdrop-filter: blur(14px);
+      border-radius: 36px;
+      overflow: hidden;
+      box-shadow: 0 15px 60px rgba(0,0,0,0.06);
+      transition: 0.4s ease;
+    }
+
+    .lifestyle-card:hover {
+      transform: translateY(-6px) scale(1.02);
+    }
+
+    .lifestyle-card-content {
+      padding: 28px;
+    }
+
+    .lifestyle-card-content h3 {
+      font-size: 28px;
+      margin-bottom: 12px;
+      letter-spacing: -1px;
+    }
+
+    .lifestyle-card-content p {
+      color: #666;
+      line-height: 1.8;
+    }
+
+    .footer {
+      padding: 100px 7%;
+      text-align: center;
+      background: #0c0c0c;
+      color: white;
+      margin-top: 120px;
+    }
+
+    .footer h2 {
+      font-size: 64px;
+      letter-spacing: -3px;
+      margin-bottom: 24px;
+    }
+
+    .footer p {
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.7);
+      font-size: 18px;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .socials a {
+      padding: 14px 22px;
+      border-radius: 100px;
+      text-decoration: none;
+      color: white;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: 0.3s ease;
+    }
+
+    .socials a:hover {
+      background: white;
+      color: black;
+    }
+
+    .footer-bottom {
+      margin-top: 40px;
+      color: rgba(255,255,255,0.4);
+      font-size: 14px;
+    }
+
+    @media(max-width: 768px) {
+      .navbar {
+        width: 95%;
+        padding: 14px 20px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 120px;
+      }
+
+      .quote-banner {
+        padding: 40px;
+      }
+
+      .hero-btns {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style></head><body>  <nav class="navbar">
+    <div class="logo">LUNO CAFÉ</div><div class="nav-links">
+  <a href="#coffee">Coffee</a>
+  <a href="#breakfast">Breakfast</a>
+  <a href="#study">Study Vibes</a>
+  <a href="#moments">Moments</a>
+</div>
+
+  </nav>  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">Premium Student Café Experience</div><h1>More Than<br>Coffee.</h1>
+
+  <p>
+    A cinematic Apple-style gallery experience built around premium coffee,
+    creator culture, modern aesthetics and the future student lifestyle.
+  </p>
+
+  <div class="hero-btns">
+    <button class="btn btn-primary">Explore Gallery</button>
+    <button class="btn btn-secondary">Visit Luno Café</button>
   </div>
-</div><section class="hero">
-  <div class="overlay"></div>
-  <div>
-    <h1>Study • Sip • Succeed</h1>
-    <p>Luxury café built for students & creators</p>
-    <a class="btn gold" href="menu.html">Explore Menu</a>
-    <a class="btn outline" href="https://wa.me/27673523983">Order WhatsApp</a>
+</div>
+
+  </section>  <section class="section" id="coffee">
+    <div class="section-header">
+      <span>Coffee Culture</span>
+      <h2>Designed to be photographed.</h2>
+    </div><div class="masonry-grid">
+
+  <div class="gallery-card">
+    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1200&auto=format&fit=crop">
+
+    <div class="overlay">
+      <div class="overlay-content">
+        <h3>Signature Lattes</h3>
+        <p>Minimal luxury coffee presentation inspired by Apple aesthetics.</p>
+      </div>
+    </div>
   </div>
-</section></body>
-</html>/* ============================== FILE 2: menu.html (MENU) ============================== */
 
-<!DOCTYPE html><html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luno Café Menu</title>  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">  <style>
-    body{margin:0;font-family:Inter,sans-serif;background:#070B0A;color:#F6F1E6}
-    .nav{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;padding:18px 40px;background:rgba(0,0,0,0.6);backdrop-filter:blur(18px)}
-    .logo{color:#C8A24A;font-weight:800}
-    .nav a{color:#fff;margin:0 12px;text-decoration:none;opacity:.8}
-    .nav a:hover{color:#C8A24A}
+  <div class="gallery-card">
+    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop">
 
-    .menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;padding:120px 40px 40px}
-
-    .card{background:rgba(255,255,255,0.05);padding:25px;border-radius:20px;border:1px solid rgba(255,255,255,0.08)}
-    .price{color:#C8A24A;margin-top:10px}
-
-    .wa{position:fixed;bottom:25px;right:25px;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:28px;text-decoration:none}
-  </style></head>
-<body><div class="nav">
-  <div class="logo">LUNO CAFÉ</div>
-  <div>
-    <a href="index.html">Home</a>
-    <a href="menu.html">Menu</a>
-    <a href="gallery.html">Gallery</a>
+    <div class="overlay">
+      <div class="overlay-content">
+        <h3>Aesthetic Spaces</h3>
+        <p>Warm ambient lighting designed for creators and students.</p>
+      </div>
+    </div>
   </div>
-</div><div class="menu-grid">
-  <div class="card"><h3>Velvet Espresso</h3><p>Bold luxury espresso</p><div class="price">R28</div></div>
-  <div class="card"><h3>Gold Caramel Latte</h3><p>Sweet creamy latte</p><div class="price">R35</div></div>
-  <div class="card"><h3>Student Combo</h3><p>Breakfast + coffee</p><div class="price">R45</div></div>
-  <div class="card"><h3>Matcha Cloud</h3><p>Aesthetic matcha blend</p><div class="price">R38</div></div>
-</div><a class="wa" href="https://wa.me/27673523983">💬</a>
 
-</body>
-</html>/* ============================== FILE 3: gallery.html (NEW LUXURY GALLERY) ============================== */
+  <div class="gallery-card">
+    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200&auto=format&fit=crop">
 
-<!DOCTYPE html><html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luno Café Gallery</title>  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">  <style>
-    body{
-      margin:0;
-      font-family:Inter,sans-serif;
-      background:#070B0A;
-      color:#F6F1E6;
-    }
-
-    .nav{
-      position:fixed;
-      top:0;
-      width:100%;
-      display:flex;
-      justify-content:space-between;
-      padding:18px 40px;
-      background:rgba(0,0,0,0.6);
-      backdrop-filter:blur(18px);
-    }
-
-    .logo{
-      color:#C8A24A;
-      font-weight:800;
-      letter-spacing:3px;
-    }
-
-    .nav a{
-      color:#fff;
-      margin:0 12px;
-      text-decoration:none;
-      opacity:0.8;
-    }
-
-    .nav a:hover{color:#C8A24A}
-
-    .hero{
-      padding:140px 40px 60px;
-      text-align:center;
-    }
-
-    h1{
-      font-size:52px;
-      color:#C8A24A;
-      margin:0;
-    }
-
-    .gallery{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:15px;
-      padding:40px;
-    }
-
-    .img{
-      height:260px;
-      border-radius:18px;
-      background-size:cover;
-      background-position:center;
-      transition:0.4s;
-      filter:brightness(0.85);
-    }
-
-    .img:hover{
-      transform:scale(1.03);
-      filter:brightness(1);
-    }
-
-    .wa{
-      position:fixed;
-      bottom:25px;
-      right:25px;
-      width:60px;
-      height:60px;
-      border-radius:50%;
-      background:#25D366;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:28px;
-      color:#fff;
-      text-decoration:none;
-    }
-  </style></head>
-<body><div class="nav">
-  <div class="logo">LUNO CAFÉ</div>
-  <div>
-    <a href="index.html">Home</a>
-    <a href="menu.html">Menu</a>
-    <a href="gallery.html">Gallery</a>
+    <div class="overlay">
+      <div class="overlay-content">
+        <h3>Morning Energy</h3>
+        <p>Every cup crafted to feel cinematic and premium.</p>
+      </div>
+    </div>
   </div>
-</div><section class="hero">
-  <h1>Instagrammable Moments</h1>
-  <p>Where students, coffee & culture meet</p>
-</section><section class="gallery">
-  <div class="img" style="background-image:url('https://images.unsplash.com/photo-1509042239860-f550ce710b93')"></div>
-  <div class="img" style="background-image:url('https://images.unsplash.com/photo-1507133750040-4a8f57021571')"></div>
-  <div class="img" style="background-image:url('https://images.unsplash.com/photo-1521017432531-fbd92d768814')"></div>
-  <div class="img" style="background-image:url('https://images.unsplash.com/photo-1445116572660-236099ec97a0')"></div>
-</section><a class="wa" href="https://wa.me/27673523983">💬</a>
 
-</body>
+  <div class="gallery-card">
+    <img src="https://images.unsplash.com/photo-1481833761820-0509d3217039?q=80&w=1200&auto=format&fit=crop">
+
+    <div class="overlay">
+      <div class="overlay-content">
+        <h3>Breakfast Boards</h3>
+        <p>Luxury breakfast culture redesigned for campus life.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-card">
+    <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?q=80&w=1200&auto=format&fit=crop">
+
+    <div class="overlay">
+      <div class="overlay-content">
+        <h3>Study Sessions</h3>
+        <p>Fast WiFi, calm atmosphere and productive creator energy.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-card">
+    <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?q=80&w=1200&auto=format&fit=crop">
+
+    <div class="overlay">
+      <div class="overlay-content">
+        <h3>Night Vibes</h3>
+        <p>Late-night café moments with cinematic lighting.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  </section>  <section class="quote-banner" id="moments">
+    <div class="quote-content">
+      <h2>Built for the next generation.</h2><p>
+    Luno Café is not just a café. It's a lifestyle space where ambitious
+    students, creators and dreamers come to build the future.
+  </p>
+</div>
+
+  </section>  <section class="section" id="study">
+    <div class="section-header">
+      <span>Luno Lifestyle</span>
+      <h2>Study. Sip. Succeed.</h2>
+    </div><div class="lifestyle-grid">
+
+  <div class="lifestyle-card">
+    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop">
+
+    <div class="lifestyle-card-content">
+      <h3>Creator Workspace</h3>
+      <p>
+        Built for students editing videos, building brands and launching ideas.
+      </p>
+    </div>
+  </div>
+
+  <div class="lifestyle-card">
+    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop">
+
+    <div class="lifestyle-card-content">
+      <h3>Minimal Interiors</h3>
+      <p>
+        Scandinavian-inspired interiors with warm lighting and modern textures.
+      </p>
+    </div>
+  </div>
+
+  <div class="lifestyle-card">
+    <img src="https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=1200&auto=format&fit=crop">
+
+    <div class="lifestyle-card-content">
+      <h3>Instagrammable Moments</h3>
+      <p>
+        Every corner designed to feel premium, social and visually addictive.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+  </section>  <footer class="footer">
+    <h2>LUNO CAFÉ</h2><p>
+  Premium coffee culture for creators, students and future founders.
+  Crafted with aesthetics, ambition and beautiful experiences.
+</p>
+
+<div class="socials">
+  <a href="#">Instagram</a>
+  <a href="#">TikTok</a>
+  <a href="#">Spotify Playlist</a>
+  <a href="#">Order Online</a>
+</div>
+
+<div class="footer-bottom">
+  © 2026 Luno Café • Designed with Apple-inspired elegance.
+</div>
+
+  </footer></body>
 </html>
