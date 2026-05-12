@@ -1,534 +1,696 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luno Café — Apple Style Menu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Luno Café Menu</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Inter',sans-serif;
     }
 
-    body {
-      background: #f5f5f7;
-      color: #111;
-      overflow-x: hidden;
+    html{
+      scroll-behavior:smooth;
     }
 
-    .hero {
-      min-height: 100vh;
+    body{
+      background:#f5f5f2;
+      color:#111;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    img{
+      width:100%;
+      display:block;
+      object-fit:cover;
+    }
+
+    .navbar{
+      position:fixed;
+      top:20px;
+      left:50%;
+      transform:translateX(-50%);
+      width:92%;
+      max-width:1250px;
+      padding:16px 30px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      z-index:1000;
+      border-radius:30px;
+      backdrop-filter:blur(18px);
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.12);
+      box-shadow:0 10px 40px rgba(0,0,0,0.12);
+    }
+
+    .logo{
+      color:white;
+      font-size:22px;
+      font-weight:700;
+      letter-spacing:1px;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:24px;
+    }
+
+    .nav-links a{
+      color:rgba(255,255,255,0.8);
+      font-size:14px;
+      transition:.3s;
+    }
+
+    .nav-links a:hover{
+      color:white;
+    }
+
+    .hero{
+      height:70vh;
       background:
-        linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.7)),
-        url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1600&auto=format&fit=crop');
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px;
-      position: relative;
+      linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
+      url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1600&auto=format&fit=crop');
+
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:white;
+      padding:40px;
     }
 
-    .glass-nav {
-      position: fixed;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 92%;
-      max-width: 1200px;
-      padding: 16px 28px;
-      border-radius: 30px;
-      backdrop-filter: blur(16px);
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    .hero-content{
+      max-width:850px;
     }
 
-    .logo {
-      color: white;
-      font-size: 22px;
-      font-weight: 700;
-      letter-spacing: 1px;
+    .hero-badge{
+      display:inline-block;
+      padding:12px 20px;
+      border-radius:100px;
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.15);
+      backdrop-filter:blur(10px);
+      margin-bottom:24px;
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:1px;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 24px;
+    .hero h1{
+      font-size:clamp(62px,10vw,130px);
+      line-height:.9;
+      letter-spacing:-5px;
+      margin-bottom:24px;
+      font-weight:800;
     }
 
-    .nav-links a {
-      text-decoration: none;
-      color: rgba(255,255,255,0.85);
-      font-size: 14px;
-      transition: 0.3s ease;
+    .hero p{
+      color:rgba(255,255,255,0.82);
+      line-height:1.9;
+      font-size:20px;
+      max-width:700px;
+      margin:auto;
     }
 
-    .nav-links a:hover {
-      color: white;
+    .menu-section{
+      padding:110px 7%;
     }
 
-    .hero-content {
-      max-width: 850px;
-      color: white;
+    .section-header{
+      text-align:center;
+      margin-bottom:70px;
     }
 
-    .badge {
-      display: inline-block;
-      padding: 10px 18px;
-      border-radius: 100px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.18);
-      backdrop-filter: blur(12px);
-      margin-bottom: 26px;
-      font-size: 13px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+    .section-header span{
+      color:#777;
+      text-transform:uppercase;
+      letter-spacing:2px;
+      font-size:13px;
     }
 
-    .hero h1 {
-      font-size: clamp(56px, 10vw, 110px);
-      font-weight: 800;
-      letter-spacing: -4px;
-      line-height: 0.95;
-      margin-bottom: 20px;
+    .section-header h2{
+      font-size:clamp(42px,7vw,82px);
+      letter-spacing:-3px;
+      margin-top:10px;
     }
 
-    .hero p {
-      font-size: 20px;
-      line-height: 1.7;
-      color: rgba(255,255,255,0.8);
-      max-width: 700px;
-      margin: auto;
+    .menu-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
     }
 
-    .hero-buttons {
-      margin-top: 40px;
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
+    .menu-card{
+      background:rgba(255,255,255,0.75);
+      border:1px solid rgba(255,255,255,0.7);
+      backdrop-filter:blur(16px);
+      border-radius:36px;
+      overflow:hidden;
+      box-shadow:0 20px 60px rgba(0,0,0,0.08);
+      transition:.35s ease;
+      position:relative;
     }
 
-    .btn {
-      padding: 16px 28px;
-      border-radius: 100px;
-      border: none;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.3s ease;
-      font-size: 15px;
+    .menu-card:hover{
+      transform:translateY(-10px) scale(1.02);
     }
 
-    .btn-primary {
-      background: white;
-      color: black;
+    .menu-card img{
+      height:260px;
+      object-fit:cover;
     }
 
-    .btn-primary:hover {
-      transform: scale(1.04);
+    .popular-tag{
+      position:absolute;
+      top:18px;
+      left:18px;
+      background:#0b5a4e;
+      color:white;
+      padding:10px 16px;
+      border-radius:100px;
+      font-size:12px;
+      font-weight:600;
+      backdrop-filter:blur(10px);
+      box-shadow:0 5px 20px rgba(0,0,0,0.18);
     }
 
-    .btn-secondary {
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.2);
-      color: white;
-      backdrop-filter: blur(12px);
+    .menu-content{
+      padding:28px;
     }
 
-    .section {
-      padding: 120px 7%;
+    .menu-content h3{
+      font-size:28px;
+      margin-bottom:12px;
+      letter-spacing:-1px;
     }
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 70px;
+    .menu-content p{
+      color:#666;
+      line-height:1.8;
+      margin-bottom:22px;
     }
 
-    .section-title span {
-      color: #888;
-      font-size: 15px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
+    .price{
+      font-size:34px;
+      color:#0b5a4e;
+      font-weight:700;
+      margin-bottom:24px;
     }
 
-    .section-title h2 {
-      font-size: clamp(40px, 6vw, 72px);
-      margin-top: 10px;
-      letter-spacing: -2px;
-      font-weight: 700;
+    .whatsapp-btn{
+      width:100%;
+      padding:16px;
+      border:none;
+      border-radius:18px;
+      background:#0b5a4e;
+      color:white;
+      font-size:15px;
+      font-weight:600;
+      cursor:pointer;
+      transition:.3s ease;
     }
 
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 28px;
+    .whatsapp-btn:hover{
+      transform:scale(1.02);
+      background:#083f37;
     }
 
-    .menu-card {
-      background: rgba(255,255,255,0.7);
-      backdrop-filter: blur(20px);
-      border-radius: 34px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.6);
-      box-shadow: 0 15px 50px rgba(0,0,0,0.08);
-      transition: all 0.35s ease;
+    .categories{
+      margin-top:90px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:30px;
     }
 
-    .menu-card:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 30px 80px rgba(0,0,0,0.12);
+    .category-card{
+      background:white;
+      border-radius:34px;
+      padding:38px;
+      box-shadow:0 15px 50px rgba(0,0,0,0.05);
     }
 
-    .menu-card img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
+    .category-card h3{
+      font-size:30px;
+      margin-bottom:24px;
+      color:#0b5a4e;
     }
 
-    .card-content {
-      padding: 26px;
+    .menu-item{
+      display:flex;
+      justify-content:space-between;
+      padding:16px 0;
+      border-bottom:1px solid #eee;
+      align-items:center;
+      gap:20px;
     }
 
-    .card-content h3 {
-      font-size: 26px;
-      margin-bottom: 12px;
-      letter-spacing: -1px;
+    .menu-item:last-child{
+      border-bottom:none;
     }
 
-    .card-content p {
-      color: #666;
-      line-height: 1.7;
-      margin-bottom: 22px;
+    .item-info h4{
+      font-size:16px;
+      margin-bottom:6px;
     }
 
-    .price-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .item-info p{
+      font-size:13px;
+      color:#777;
     }
 
-    .price {
-      font-size: 28px;
-      font-weight: 700;
-      color: #0d5b4f;
+    .item-price{
+      font-weight:700;
+      color:#0b5a4e;
     }
 
-    .tag {
-      background: #e9fff6;
-      color: #0d5b4f;
-      padding: 10px 14px;
-      border-radius: 100px;
-      font-size: 12px;
-      font-weight: 600;
+    .small-whatsapp{
+      background:#0b5a4e;
+      color:white;
+      border:none;
+      padding:10px 16px;
+      border-radius:14px;
+      font-size:12px;
+      cursor:pointer;
+      transition:.3s;
     }
 
-    .feature-section {
-      background: linear-gradient(135deg, #07120f, #10211d);
-      color: white;
-      border-radius: 50px;
-      margin: 0 4%;
-      padding: 100px 7%;
-      position: relative;
-      overflow: hidden;
+    .small-whatsapp:hover{
+      background:#083f37;
     }
 
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      margin-top: 50px;
+    .floating-whatsapp{
+      position:fixed;
+      right:24px;
+      bottom:24px;
+      width:70px;
+      height:70px;
+      border-radius:50%;
+      background:#25D366;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-size:34px;
+      z-index:9999;
+      box-shadow:0 10px 30px rgba(37,211,102,.4);
+      animation:pulse 2s infinite;
     }
 
-    .feature-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
-      padding: 34px;
-      border-radius: 30px;
-      backdrop-filter: blur(14px);
-    }
-
-    .feature-card h4 {
-      font-size: 24px;
-      margin-bottom: 14px;
-    }
-
-    .feature-card p {
-      color: rgba(255,255,255,0.7);
-      line-height: 1.8;
-    }
-
-    .signature-banner {
-      margin-top: 100px;
-      border-radius: 40px;
-      overflow: hidden;
-      position: relative;
-      min-height: 500px;
-      background:
-        linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.2)),
-        url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1600&auto=format&fit=crop');
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      padding: 70px;
-      color: white;
-    }
-
-    .signature-content {
-      max-width: 520px;
-    }
-
-    .signature-content h2 {
-      font-size: clamp(42px, 6vw, 82px);
-      line-height: 0.95;
-      margin-bottom: 24px;
-      letter-spacing: -3px;
-    }
-
-    .signature-content p {
-      color: rgba(255,255,255,0.82);
-      line-height: 1.9;
-      margin-bottom: 32px;
-      font-size: 18px;
-    }
-
-    .footer {
-      padding: 90px 7%;
-      text-align: center;
-    }
-
-    .footer h2 {
-      font-size: 56px;
-      letter-spacing: -2px;
-      margin-bottom: 20px;
-    }
-
-    .footer p {
-      color: #666;
-      font-size: 18px;
-      max-width: 650px;
-      margin: auto;
-      line-height: 1.8;
-    }
-
-    .footer-bottom {
-      margin-top: 50px;
-      color: #999;
-      font-size: 14px;
-    }
-
-    @media(max-width: 768px) {
-      .hero {
-        padding-top: 120px;
+    @keyframes pulse{
+      0%{
+        transform:scale(1);
       }
 
-      .glass-nav {
-        width: 95%;
-        padding: 14px 18px;
+      50%{
+        transform:scale(1.08);
       }
 
-      .nav-links {
-        display: none;
-      }
-
-      .signature-banner {
-        padding: 40px;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
+      100%{
+        transform:scale(1);
       }
     }
-  </style></head><body>  <nav class="glass-nav">
-    <div class="logo">LUNO CAFÉ</div><div class="nav-links">
-  <a href="#breakfast">Breakfast</a>
-  <a href="#coffee">Coffee</a>
-  <a href="#smoothies">Smoothies</a>
-  <a href="#vibes">Experience</a>
-</div>
 
-  </nav>  <section class="hero">
+    .footer{
+      background:#0c0c0c;
+      color:white;
+      text-align:center;
+      padding:100px 7%;
+      margin-top:120px;
+    }
+
+    .footer h2{
+      font-size:64px;
+      letter-spacing:-3px;
+      margin-bottom:20px;
+    }
+
+    .footer p{
+      color:rgba(255,255,255,0.7);
+      max-width:700px;
+      margin:auto;
+      line-height:1.9;
+    }
+
+    .footer-links{
+      display:flex;
+      justify-content:center;
+      gap:18px;
+      flex-wrap:wrap;
+      margin-top:40px;
+    }
+
+    .footer-links a{
+      color:white;
+      padding:14px 22px;
+      border-radius:100px;
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.12);
+      transition:.3s;
+    }
+
+    .footer-links a:hover{
+      background:white;
+      color:black;
+    }
+
+    @media(max-width:768px){
+
+      .navbar{
+        width:95%;
+        padding:14px 20px;
+      }
+
+      .nav-links{
+        display:none;
+      }
+
+      .hero{
+        padding-top:120px;
+      }
+
+      .menu-item{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+
+    <div class="logo">LUNO CAFÉ</div>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About</a>
+    </div>
+
+  </nav>
+
+  <section class="hero">
+
     <div class="hero-content">
-      <div class="badge">Premium Café Experience • Crafted for Students</div><h1>Study.<br>Sip.<br>Succeed.</h1>
 
-  <p>
-    A futuristic Apple-inspired café experience blending premium coffee,
-    aesthetic breakfast culture, and sleek modern student energy.
-  </p>
-
-  <div class="hero-buttons">
-    <button class="btn btn-primary">View Menu</button>
-    <button class="btn btn-secondary">Order Online</button>
-  </div>
-</div>
-
-  </section>  <section class="section" id="breakfast">
-    <div class="section-title">
-      <span>Breakfast Collection</span>
-      <h2>Beautiful mornings start here.</h2>
-    </div><div class="menu-grid">
-
-  <div class="menu-card">
-    <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?q=80&w=1200&auto=format&fit=crop">
-
-    <div class="card-content">
-      <h3>Luno Sunrise</h3>
-      <p>Eggs, crispy toast, grilled sausage and hash browns with café-style plating.</p>
-
-      <div class="price-row">
-        <div class="price">R59</div>
-        <div class="tag">Best Seller</div>
+      <div class="hero-badge">
+        Premium Menu • Crafted for the Students Economy
       </div>
+
+      <h1>Breakfast.<br>Coffee.<br>Vibes.</h1>
+
+      <p>
+        Beautiful food, premium coffee and aesthetic experiences designed
+        for creators, students and modern café culture.
+      </p>
+
     </div>
-  </div>
 
-  <div class="menu-card">
-    <img src="https://images.unsplash.com/photo-1553909489-cd47e0ef937f?q=80&w=1200&auto=format&fit=crop">
+  </section>
 
-    <div class="card-content">
-      <h3>Breakfast Wrap</h3>
-      <p>Scrambled eggs, grilled chicken strips, melted cheese and spicy mayo.</p>
+  <section class="menu-section">
 
-      <div class="price-row">
-        <div class="price">R45</div>
-        <div class="tag">Campus Favorite</div>
+    <div class="section-header">
+      <span>Featured Breakfast</span>
+      <h2>Morning fuel done beautifully.</h2>
+    </div>
+
+    <div class="menu-grid">
+
+      <!-- CARD -->
+
+      <div class="menu-card">
+
+        <div class="popular-tag">🔥 Most Ordered</div>
+
+        <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="menu-content">
+
+          <h3>Luno Sunrise Breakfast</h3>
+
+          <p>
+            Eggs, crispy toast, grilled sausage and hash browns designed for productive mornings.
+          </p>
+
+          <div class="price">R59</div>
+
+          <button class="whatsapp-btn"
+          onclick="orderItem('Luno Sunrise Breakfast','59')">
+            Order on WhatsApp
+          </button>
+
+        </div>
+
       </div>
-    </div>
-  </div>
 
-  <div class="menu-card">
-    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=1200&auto=format&fit=crop">
+      <!-- CARD -->
 
-    <div class="card-content">
-      <h3>Campus Power Bowl</h3>
-      <p>Granola, yogurt, strawberries, blueberries, banana and organic honey.</p>
+      <div class="menu-card">
 
-      <div class="price-row">
-        <div class="price">R49</div>
-        <div class="tag">Healthy</div>
+        <div class="popular-tag">⭐ Student Favorite</div>
+
+        <!-- UPGRADED WRAP IMAGE -->
+        <img src="https://images.unsplash.com/photo-1539252554453-80ab65ce3586?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="menu-content">
+
+          <h3>Breakfast Wrap</h3>
+
+          <p>
+            Scrambled eggs, grilled chicken strips, melted cheese and creamy spicy mayo.
+          </p>
+
+          <div class="price">R45</div>
+
+          <button class="whatsapp-btn"
+          onclick="orderItem('Breakfast Wrap','45')">
+            Order on WhatsApp
+          </button>
+
+        </div>
+
       </div>
+
+      <!-- CARD -->
+
+      <div class="menu-card">
+
+        <div class="popular-tag">⚡ Trending</div>
+
+        <img src="https://images.unsplash.com/photo-1511690078903-71dc5a49f5e3?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="menu-content">
+
+          <h3>Campus Power Bowl</h3>
+
+          <p>
+            Granola, yogurt, berries and bananas layered beautifully for healthy energy.
+          </p>
+
+          <div class="price">R49</div>
+
+          <button class="whatsapp-btn"
+          onclick="orderItem('Campus Power Bowl','49')">
+            Order on WhatsApp
+          </button>
+
+        </div>
+
+      </div>
+
     </div>
-  </div>
 
-</div>
+    <!-- CATEGORIES -->
 
-  </section>  <section class="feature-section" id="coffee"><div class="section-title">
-  <span style="color: rgba(255,255,255,0.6);">Coffee Culture</span>
-  <h2 style="color: white;">Minimal. Warm. Viral.</h2>
-</div>
+    <div class="categories">
 
-<div class="feature-grid">
+      <!-- COFFEE -->
 
-  <div class="feature-card">
-    <h4>Neon Matcha Latte</h4>
+      <div class="category-card">
+
+        <h3>☕ Coffee & Hot Drinks</h3>
+
+        <div class="menu-item">
+
+          <div class="item-info">
+            <h4>Cappuccino</h4>
+            <p>Rich creamy espresso</p>
+          </div>
+
+          <div class="item-price">R29</div>
+
+          <button class="small-whatsapp"
+          onclick="orderItem('Cappuccino','29')">
+            Order
+          </button>
+
+        </div>
+
+        <div class="menu-item">
+
+          <div class="item-info">
+            <h4>Americano</h4>
+            <p>Strong smooth coffee</p>
+          </div>
+
+          <div class="item-price">R24</div>
+
+          <button class="small-whatsapp"
+          onclick="orderItem('Americano','24')">
+            Order
+          </button>
+
+        </div>
+
+        <div class="menu-item">
+
+          <div class="item-info">
+            <h4>Matcha Latte</h4>
+            <p>Premium neon green matcha</p>
+          </div>
+
+          <div class="item-price">R32</div>
+
+          <button class="small-whatsapp"
+          onclick="orderItem('Matcha Latte','32')">
+            Order
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- COLD DRINKS -->
+
+      <div class="category-card">
+
+        <h3>🥤 Cold Drinks</h3>
+
+        <div class="menu-item">
+
+          <div class="item-info">
+            <h4>Iced Coffee</h4>
+            <p>Luxury aesthetic iced coffee</p>
+          </div>
+
+          <div class="item-price">R34</div>
+
+          <button class="small-whatsapp"
+          onclick="orderItem('Iced Coffee','34')">
+            Order
+          </button>
+
+        </div>
+
+        <div class="menu-item">
+
+          <div class="item-info">
+            <h4>Caramel Frappe</h4>
+            <p>Sweet creamy caramel drink</p>
+          </div>
+
+          <div class="item-price">R39</div>
+
+          <button class="small-whatsapp"
+          onclick="orderItem('Caramel Frappe','39')">
+            Order
+          </button>
+
+        </div>
+
+        <div class="menu-item">
+
+          <div class="item-info">
+            <h4>Strawberry Smoothie</h4>
+            <p>Fresh fruity smoothie blend</p>
+          </div>
+
+          <div class="item-price">R36</div>
+
+          <button class="small-whatsapp"
+          onclick="orderItem('Strawberry Smoothie','36')">
+            Order
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer class="footer">
+
+    <h2>LUNO CAFÉ</h2>
+
     <p>
-      Signature glowing green latte inspired by futuristic Tokyo café culture.
+      Good Food. Good Coffee. Good Vibes.
+      Crafted in Randfontein for creators, students and dreamers.
     </p>
-  </div>
 
-  <div class="feature-card">
-    <h4>Aesthetic Iced Coffees</h4>
-    <p>
-      Premium layered coffees designed for Instagram, TikTok and student content culture.
-    </p>
-  </div>
-
-  <div class="feature-card">
-    <h4>Fast WiFi + Charging</h4>
-    <p>
-      Designed for creators, students and remote workers who live online.
-    </p>
-  </div>
-
-</div>
-
-  </section>  <section class="section" id="smoothies">
-    <div class="section-title">
-      <span>Premium Smoothies</span>
-      <h2>Fuel for the next generation.</h2>
-    </div><div class="menu-grid">
-
-  <div class="menu-card">
-    <img src="https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?q=80&w=1200&auto=format&fit=crop">
-
-    <div class="card-content">
-      <h3>Luno Energy Shake</h3>
-      <p>Banana, peanut butter, honey and milk blended into a smooth energy boost.</p>
-
-      <div class="price-row">
-        <div class="price">R50</div>
-        <div class="tag">Signature</div>
-      </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About</a>
     </div>
-  </div>
 
-  <div class="menu-card">
-    <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?q=80&w=1200&auto=format&fit=crop">
+  </footer>
 
-    <div class="card-content">
-      <h3>Tropical Luno</h3>
-      <p>Mango, pineapple and coconut blended into a refreshing tropical smoothie.</p>
+  <!-- FLOATING WHATSAPP -->
 
-      <div class="price-row">
-        <div class="price">R50</div>
-        <div class="tag">Refreshing</div>
-      </div>
-    </div>
-  </div>
+  <a class="floating-whatsapp"
+  href="https://wa.me/27673523983"
+  target="_blank">
+    💬
+  </a>
 
-  <div class="menu-card">
-    <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=1200&auto=format&fit=crop">
+  <script>
 
-    <div class="card-content">
-      <h3>Protein Smoothie</h3>
-      <p>Protein-rich smoothie designed for gym lovers, creators and busy students.</p>
+    function orderItem(item, price){
 
-      <div class="price-row">
-        <div class="price">R55</div>
-        <div class="tag">Fitness</div>
-      </div>
-    </div>
-  </div>
+      let message =
+`Hello Luno Café 👋
 
-</div>
+I'd like to order:
 
-<div class="signature-banner" id="vibes">
-  <div class="signature-content">
-    <div class="badge">The Luno Experience</div>
+• ${item} — R${price}
 
-    <h2>Café culture redesigned for Gen Z.</h2>
+Please confirm availability.`;
 
-    <p>
-      Apple-inspired minimalism meets modern African student culture.
-      Sleek aesthetics. Soft lighting. Premium presentation. Viral café energy.
-    </p>
+      let phone = "27673523983";
 
-    <button class="btn btn-primary">Visit Luno Café</button>
-  </div>
-</div>
+      let whatsappURL =
+`https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
-  </section>  <footer class="footer">
-    <h2>LUNO CAFÉ</h2><p>
-  Good Food. Good Coffee. Good Vibes.
-  Crafted for creators, students and the future of café culture.
-</p>
+      window.open(whatsappURL, '_blank');
 
-<div class="footer-bottom">
-  © 2026 Luno Café • Designed with Apple-inspired elegance.
-</div>
+    }
 
-  </footer></body>
+  </script>
+
+</body>
 </html>
